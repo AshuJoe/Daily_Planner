@@ -1,0 +1,136 @@
+/* === Reset === */
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* === Card Container === */
+
+.login,
+.register,
+.planner {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    max-width: 90%;
+    text-align: center;
+}
+
+h1,
+h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+
+/* === Forms === */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #2193b0;
+    box-shadow: 0 0 5px rgba(33, 147, 176, 0.4);
+}
+
+
+/* === Buttons === */
+
+button {
+    padding: 0.8rem;
+    background: #2193b0;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #176f85;
+}
+
+
+/* === Links === */
+
+a {
+    color: #2193b0;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* === Task List === */
+
+.task-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.task-form input {
+    flex: 1;
+}
+
+.task-list {
+    margin-top: 1rem;
+    text-align: left;
+    padding: 0;
+    list-style: none;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9f9f9;
+    margin-bottom: 0.5rem;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+
+.task-list li:hover {
+    background: #eef6f9;
+}
+
+.task-list li.completed span {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.task-list button {
+    background: #ff5c5c;
+}
+
+.task-list button:hover {
+    background: #c93030;
+}
