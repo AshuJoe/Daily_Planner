@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Daily Planner</title>
-  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <div id="app">
-    <h2>Daily Planner</h2>
-    <div>
-      <input type="text" v-model="newTask" placeholder="Add a new task" @keyup.enter="addTask" />
-      <button @click="addTask">Add</button>
-    </div>
-    <ul>
-      <li v-for="(task, index) in tasks" :key="index">
-        {{ task }}
-        <button @click="removeTask(index)">X</button>
-      </li>
-    </ul>
-  </div>
 
-  <script src="js/app.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Planner</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        <h2>Daily Planner</h2>
+
+        <!-- Add Task Form -->
+        <div class="form">
+            <input type="text" v-model="newTaskTitle" placeholder="Task Title" />
+            <input type="text" v-model="newTaskDescription" placeholder="Description" />
+            <input type="date" v-model="newTaskDate" />
+            <button @click="addTask">Add Task</button>
+        </div>
+
+        <!-- Task List -->
+        <ul>
+            <li v-for="task in tasks" :key="task.id">
+                <input type="checkbox" v-model="task.completed" @change="toggleComplete(task)">
+                <span :style="{ textDecoration: task.completed ? 'line-through' : 'none' }">
+          {{ task.title }} - {{ task.description }} ({{ task.dueDate }})
+        </span>
+                <button @click="removeTask(task.id)">X</button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="js/app.js"></script>
 </body>
+
 </html>
